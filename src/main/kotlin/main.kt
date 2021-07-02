@@ -22,10 +22,9 @@ import ui.*
 
 fun main() = Window(
     title = "Panda",
-    size = IntSize(756, 1080),
 ) {
     val darkTheme = isSystemInDarkTheme()
-    val androidHome = remember { mutableStateOf(DefaultConstants.DEFAULT_ANDROID_HOME)}
+    val androidHome = remember { mutableStateOf(DefaultConstants.DEFAULT_ANDROID_HOME) }
     val cmdResult = remember { mutableStateOf(DefaultConstants.DEFAULT_EMPTY) }
     val devices = remember { mutableStateOf(mutableListOf<Device>()) }
     val expanded = remember { mutableStateOf(false) }
@@ -34,7 +33,7 @@ fun main() = Window(
     val model = remember { mutableStateOf("") }
     val versionRelease = remember { mutableStateOf("") }
     val versionSdk = remember { mutableStateOf("") }
-    val packageName = remember { mutableStateOf(DefaultConstants.DEFAULT_PACKAGE_NAME)}
+    val packageName = remember { mutableStateOf(DefaultConstants.DEFAULT_PACKAGE_NAME) }
     val window = LocalAppWindow.current
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -149,18 +148,31 @@ fun main() = Window(
 }
 
 private val Green200 = Color(0xffa5d6a7)
+private val Green200Dark = Color(0xff75a478)
 private val LightGreen200 = Color(0xffc5e1a5)
-private val Grey900 = Color(0xff212121)
-private val Grey100 = Color(0xfffafafa)
+private val LightGreen200Dark = Color(0xff94af76)
+
+private val Pink200 = Color(0xfff48fb1)
+private val Pink200Dark = Color(0xfffbf5f82)
+
+private val Purple200 = Color(0xfffce93d8)
+private val Purple200Dark  = Color(0xfff9c64a6)
+
 
 private val LightColors = lightColors(
     primary = Green200,
     secondary = LightGreen200,
+
+    onPrimary = Pink200,
+    onSurface = Purple200,
 )
 
 private val DarkColors = darkColors(
-    primary = Grey900,
-    secondary = Grey100,
+    primary = Green200Dark,
+    secondary = LightGreen200Dark,
+
+    onPrimary = Pink200Dark,
+    onSurface = Purple200Dark,
 )
 
 private val Shapes = Shapes(

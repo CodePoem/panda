@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,7 +26,8 @@ fun TitleLayout(
             text = phoneTitle,
             modifier = Modifier.weight(1F),
             textAlign = TextAlign.Center,
-            fontSize = 22.sp
+            fontSize = 22.sp,
+            color = MaterialTheme.colors.onPrimary
         )
 
         Spacer(modifier = Modifier.width(8.dp))

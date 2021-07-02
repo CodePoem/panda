@@ -32,7 +32,8 @@ fun ConfigLayout(
                 backgroundColor = MaterialTheme.colors.secondary,
             ),
             textStyle = TextStyle(
-                fontSize = 18.sp
+                fontSize = 18.sp,
+                color = MaterialTheme.colors.onPrimary
             ),
             onValueChange = onAndroidHomeInputChange
         )

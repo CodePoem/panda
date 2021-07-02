@@ -29,7 +29,12 @@ fun SelectView(
         Row(
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Text("选择当前设备：")
+            Text(
+                "选择当前设备：",
+                style = TextStyle(
+                    color = MaterialTheme.colors.onPrimary
+                )
+            )
 
             Spacer(modifier = Modifier.size(8.dp))
 
@@ -41,6 +46,7 @@ fun SelectView(
                     style = TextStyle(
                         textAlign = TextAlign.Center,
                         fontSize = 18.sp,
+                        color = MaterialTheme.colors.onPrimary,
                     ),
                     onClick = {
                         onSelectClick()

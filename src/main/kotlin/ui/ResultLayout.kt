@@ -9,15 +9,20 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun ResultLayout(result: String) {
     Row(
-        modifier = Modifier.height(300.dp)
+        modifier = Modifier.height(150.dp)
     ) {
         TextField(
             shape = MaterialTheme.shapes.large,
+            textStyle = TextStyle(
+                color = MaterialTheme.colors.onPrimary
+            ),
             modifier = Modifier.fillMaxSize().padding(8.dp),
             label = { Text("Result") },
             value = result,
