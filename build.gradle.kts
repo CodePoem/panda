@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.vdreamers.panda"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     jcenter()
@@ -30,7 +30,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "panda"
-            packageVersion = "1.0.0"
+            packageVersion = "1.0.1"
 
             linux {
                 iconFile.set(project.file("icon.png"))
@@ -45,7 +45,7 @@ compose.desktop {
             windows {
                 menu = true
                 // see https://wixtoolset.org/documentation/manual/v3/howtos/general/generate_guids.html
-                upgradeUuid = "f438c299-0368-4871-9b3f-70f5232e4f0d"
+                upgradeUuid = "47cb1880-dcec-49ad-8382-9f270c099594"
                 iconFile.set(project.file("icon.ico"))
             }
         }
