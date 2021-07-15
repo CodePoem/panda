@@ -32,6 +32,8 @@ object AdbCmd {
 
     private const val ADB_MONKEY_TIMES_DEFAULT = 100
 
+    private const val ADB_START_APP = "$ADB_DEF_DEVICE shell am start -n %2s/%3s"
+
     private const val ADB_MONKEY = "$ADB_DEF_DEVICE shell monkey -p %2s -v %3d –-throttle %4d"
 
     fun adbDevicesCmd(): String {
@@ -75,6 +77,15 @@ object AdbCmd {
 
     fun adbScreenshotCmd(deviceName: String, outputFileName: String): String {
         return String.format("$adb $ADB_SCREENSHOT", deviceName, outputFileName)
+    }
+
+    fun adbStartAppCmd(deviceName: String, packageName: String, activityFullName: String): String {
+        return String.format(
+            "$adb $ADB_START_APP",
+            deviceName,
+            packageName,
+            activityFullName
+        )
     }
 
     fun adbMonkeyCmd(deviceName: String, packageName: String): String {

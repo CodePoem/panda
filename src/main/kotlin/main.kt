@@ -34,6 +34,7 @@ fun main() = Window(
     val versionRelease = remember { mutableStateOf("") }
     val versionSdk = remember { mutableStateOf("") }
     val packageName = remember { mutableStateOf(DefaultConstants.DEFAULT_PACKAGE_NAME) }
+    val activityFullName = remember { mutableStateOf(DefaultConstants.DEFAULT_ACTIVITY_FULL_NAME) }
     val window = LocalAppWindow.current
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -130,8 +131,12 @@ fun main() = Window(
                     MonkeyLayout(
                         deviceName = selectedItem.value.id,
                         packageName = packageName.value,
+                        activityFullName = activityFullName.value,
                         onPackageNameInputChange = {
                             packageName.value = it
+                        },
+                        onStartAppResult = {
+                            cmdResult.value = it
                         },
                         onMonkeyResult = {
                             cmdResult.value = it

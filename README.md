@@ -19,11 +19,15 @@ Develop
 
 ### Running desktop application
 
+JDK 15+
+
 ```shell
 ./gradlew :desktop:run
 ```
 
 ### Building native desktop distribution
+
+JDK 16+
 
 ```shell
 ./gradlew :desktop:package
